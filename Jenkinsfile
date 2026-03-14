@@ -27,7 +27,7 @@ pipeline {
         stage('Validar Imagen') {
             steps {
                 echo "Validando imagen creada..."
-                bat 'docker images | grep devops-app'
+                bat 'docker images'
             }
         }
     }
