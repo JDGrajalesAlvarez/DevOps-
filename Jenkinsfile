@@ -1,23 +1,35 @@
 pipeline {
     agent any
+
     stages {
-        stage ('Build'){
 
-            steps{
-                echo "Etapa build no Disponible"
+        stage('Build') {
+            steps {
+                echo "Iniciando etapa Build..."
+                sh 'echo "Compilación del proyecto simulada"'
             }
         }
 
-        stage('Test'){
-            steps{
-                echo "Estapa Test no Disponible"
+        stage('Test') {
+            steps {
+                echo "Iniciando etapa Test..."
+                sh 'echo "Ejecución de pruebas simuladas"'
             }
         }
-        stage('Deploy'){
-            steps{
-                sh "docker compose down -v"
-                sh "docker compose up -d --build"
+
+        stage('Docker Build') {
+            steps {
+                echo "Construyendo imagen Docker..."
+                sh 'docker build -t devops-app .'
             }
         }
+
+        stage('Validar Imagen') {
+            steps {
+                echo "Validando imagen creada..."
+                sh 'docker images | grep devops-app'
+            }
+        }
+
     }
 }
