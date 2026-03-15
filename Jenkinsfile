@@ -26,8 +26,8 @@ pipeline {
 
         stage('Validar Imagen') {
             steps {
-                echo "Validando imagen creada..."
-                bat 'docker images'
+                echo "Validando imagen  creada..."
+                bat 'docker images' 
             }
         }
     }
