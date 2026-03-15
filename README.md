@@ -1,2 +1,0 @@
-# devops
-Creacion de repositorio para la segunda actividad de DevOps - Versiones GIT y Jenkins
